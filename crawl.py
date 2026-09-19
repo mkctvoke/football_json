@@ -162,7 +162,7 @@ def process_cala_tv():
 # ================= TAM QUOC =================
 def process_tamquoc_tv():
     out = []
-    data = fetch_json("https://sv.tamquoctv.xyz/internal/api/matches")
+    data = fetch_json("https://data-api.sportflowlivez.com/v1/football/xoilacz/match/live")
     items = data.get("data", [])
     if isinstance(items, dict):
         items = items.values()
@@ -388,7 +388,7 @@ if __name__ == "__main__":
     # HỘI QUÁN 1
     data += process_standard("https://sv.hoiquantv.xyz/api/v1/external/fixtures/unfinished", "HỘI QUÁN 1")
     # HỘI QUÁN 2
-    data += process_hoiquan2("https://raw.githubusercontent.com/Bacbenny/freetvco/refs/heads/main/output/cotivi_sports.m3u", "HỘI QUÁN 2")
+    data += process_hoiquan2("https://phunguyen.github.io/socolive/", "HỘI QUÁN 2")
     # THIÊN ĐÌNH
     data += process_standard("https://sv.thiendinhtv.xyz/api/v1/external/fixtures/unfinished", "THIÊN ĐÌNH")
     # XAY CON
@@ -400,9 +400,9 @@ if __name__ == "__main__":
     # TAM QUOC TV
     data += process_tamquoc_tv()
     # GIỜ VÀNG TV
-    data += process_hoiquan2("https://raw.githubusercontent.com/jasminliu98/giovang-stream/refs/heads/main/output.json", "GIỜ VÀNG")
+    data += process_hoiquan2("https://raw.githubusercontent.com/mkctvoke/giovang-stream/refs/heads/main/output.json", "GIỜ VÀNG")
     # QUE CHOA TV
-    data += process_quechoa_tv("https://raw.githubusercontent.com/huybuonvp/xem_football/refs/heads/main/All_CHANNEL_live.m3u", "QUÊ CHOA")
+    data += process_quechoa_tv("https://data-api.sportflowlivez.com/v1/football/xoilacz/match/live", "QUÊ CHOA")
     # FPT SPORT
     data += load_fpt_sport("https://tinhlagi.pro/s.m3u", "SPORT-TV")
     
